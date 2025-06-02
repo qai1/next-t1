@@ -31,40 +31,45 @@ export default function CrewPage() {
 
   return (
     <section className="bg-[url(/images/bg-crew.jpg)] bg-cover bg-no-repeat min-h-screen px-5">
-      <div className="container md:max-w-6xl m-auto pt-28">
-        <div className="page-title text-lg md:text-2xl flex justify-center lg:justify-start uppercase tracking-widset text-white pb-20">
-          <p className="condensed">
+      <div className="container md:max-w-6xl m-auto pt-28 flex flex-col lg:flex-row items-center gap-20">
+        <div className="flex flex-col items-center lg:items-start">
+          <p className="text-lg lg:text-2xl flex items-start uppercase tracking-widset text-white py-10 condensed">
             <span className="mr-5 font-bold text-slate-500">02</span>Meet you
             crew
           </p>
-        </div>
-        <div>
-          <div className="flex flex-col text-center">
-            <p className="belle">{crew[activeContent].role}</p>
-            <h1 className="belle">{crew[activeContent].name}</h1>
-            <p className="text-[#D0D6F9] min-w-[327px] sm:min-w-[512px]">
+          <div className="flex flex-col items-center text-center lg:items-start lg:text-start lg:py-40">
+            <p className="belle uppercase text-[22px] sm:text-4xl text-white/35">
+              {crew[activeContent].role}
+            </p>
+            <h1 className="belle uppercase text-[32px] sm:text-6xl">
+              {crew[activeContent].name}
+            </h1>
+            <br />
+            <p className="text-[#D0D6F9] min-w-[327px] sm:w-[512px]">
               {crew[activeContent].description}
             </p>
           </div>
-          <div className="flex justify-center">
+          <div className="flex py-10 gap-8">
             {crew.map((crew, index) => {
               return (
                 <button
                   key={index}
                   onClick={() => setActiveContent(index)}
-                  className="cursor-pointer] p-5"
+                  className={`${
+                    activeContent === index ? "bg-white" : "bg-slate-500"
+                  } rounded-full w-[15px] h-[15px] cursor-pointer transition duration-300 items-center`}
                 >
-                  <div className="bg-white/20 hover:bg-white h-5 w-5 rounded-full"></div>
+                  <div className=""></div>
                 </button>
               );
             })}
           </div>
-          <img
-            src={crew[activeContent].image}
-            alt=""
-            className="w-full min-w-[327px]"
-          />
         </div>
+        <img
+          src={crew[activeContent].image}
+          alt=""
+          className="w-full min-w-[327px] sm:w-[445px] md:w-[540px] bottom-0"
+        />
       </div>
     </section>
   );

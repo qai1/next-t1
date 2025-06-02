@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <main className="bg-[url(/images/bg-home.jpg)] p- flex justify-center items-center bg-cover h-screen">
+    <main className="bg-[url(/images/bg-home.jpg)] flex justify-center items-center bg-cover h-screen">
       <div className="flex flex-col lg:flex-row p-7 items-center gap-20">
         <div className="flex flex-col w-full max-w-[540px] text-center lg:text-left">
           <p className="condensed text-[28px] text-[#D0D6F9]">

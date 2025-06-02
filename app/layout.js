@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${barlow.variable} ${belleFair.variable} ${barlowCondensed.variable}  antialiased`}
+        className={`${barlow.variable} ${belleFair.variable} ${barlowCondensed.variable} antialiased`}
       >
         <Navbar />
         {children}
